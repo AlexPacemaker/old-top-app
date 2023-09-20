@@ -1,7 +1,1 @@
-import React from "react";
-
-const index = () => {
-  return;
-};
-
-export default index;
+export * from "./Titles/Titles";
