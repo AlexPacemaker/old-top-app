@@ -10,7 +10,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
         <link rel='icon' href='/favicon.ico' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
       </Head>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 };
