@@ -1,10 +1,10 @@
 import { IRating } from "./Rating.props";
-import styles from "./Rating.module.css";
+import styles from "./Rating.module.scss";
 import cn from "classnames";
 import StarIcon from "./star.svg";
 import { useEffect, useState, KeyboardEvent } from "react";
 
-export const Rating = ({ isEditable = false, rating, setRating, ...props }: IRating): JSX.Element => {
+const Rating = ({ isEditable = false, rating, setRating, ...props }: IRating): JSX.Element => {
   const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
 
   useEffect(() => {
@@ -15,15 +15,25 @@ export const Rating = ({ isEditable = false, rating, setRating, ...props }: IRat
   const constructRating = (currentRating: number) => {
     const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
       return (
-        <StarIcon
-          key={i}
-          className={cn(styles.star, {
-            [styles.filled]: i < currentRating,
-          })}
-        />
+        <span key={i}>
+          <StarIcon
+            className={cn(styles.star, {
+              [styles.filled]: i < currentRating,
+            })}
+            onMouseEnter={() => changeDisplay(i + 1)}
+            onMouseLeave={() => changeDisplay(rating)}
+          />
+        </span>
       );
     });
     setRatingArray(updatedArray);
+  };
+
+  const changeDisplay = (i: number) => {
+    if (!isEditable) {
+      return;
+    }
+    constructRating(i);
   };
 
   return (
@@ -34,3 +44,5 @@ export const Rating = ({ isEditable = false, rating, setRating, ...props }: IRat
     </div>
   );
 };
+
+export default Rating;

@@ -3,6 +3,7 @@ import Titles from "@/Components/Titles/Titles";
 import Button from "@/Components/Button/Button";
 import Paragraph from "@/Components/Paragraph/Paragraph";
 import Tag from "@/Components/Tag/Tag";
+import Rating from "@/Components/Rating/Rating";
 
 export default function Home(): JSX.Element {
   return (
@@ -31,6 +32,7 @@ export default function Home(): JSX.Element {
       <Tag color='primary' size='m'>
         Green
       </Tag>
+      <Rating rating={4} isEditable />
     </div>
   );
 }
