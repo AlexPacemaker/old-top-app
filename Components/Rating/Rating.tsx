@@ -15,13 +15,19 @@ const Rating = ({ isEditable = false, rating, setRating, ...props }: IRating): J
   const constructRating = (currentRating: number) => {
     const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
       return (
-        <span key={i}>
+        <span
+          key={i}
+          className={cn(styles.star, {
+            [styles.filled]: i < currentRating,
+            [styles.editable]: isEditable,
+          })}
+          onMouseEnter={() => changeDisplay(i + 1)}
+          onMouseLeave={() => changeDisplay(rating)}
+          onClick={() => onClickChange(i + 1)}
+        >
           <StarIcon
-            className={cn(styles.star, {
-              [styles.filled]: i < currentRating,
-            })}
-            onMouseEnter={() => changeDisplay(i + 1)}
-            onMouseLeave={() => changeDisplay(rating)}
+            tabindex={isEditable ? 0 : -1}
+            onKeyDown={(e: KeyboardEvent<SVGElement>) => isEditable && handleSpace(i + 1, e)}
           />
         </span>
       );
@@ -34,6 +40,20 @@ const Rating = ({ isEditable = false, rating, setRating, ...props }: IRating): J
       return;
     }
     constructRating(i);
+  };
+
+  const onClickChange = (i: number) => {
+    if (!isEditable || !setRating) {
+      return;
+    }
+    setRating(i);
+  };
+
+  const handleSpace = (i: number, e: KeyboardEvent<SVGElement>) => {
+    if (e.code != "Space" || !setRating) {
+      return;
+    }
+    setRating(i);
   };
 
   return (

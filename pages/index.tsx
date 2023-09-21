@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Titles from "@/Components/Titles/Titles";
 import Button from "@/Components/Button/Button";
 import Paragraph from "@/Components/Paragraph/Paragraph";
@@ -6,6 +6,8 @@ import Tag from "@/Components/Tag/Tag";
 import Rating from "@/Components/Rating/Rating";
 
 export default function Home(): JSX.Element {
+  const [rating, setRating] = useState<number>(4);
+
   return (
     <div>
       <Titles tag='h1'>Text</Titles>
@@ -32,7 +34,7 @@ export default function Home(): JSX.Element {
       <Tag color='primary' size='m'>
         Green
       </Tag>
-      <Rating rating={4} isEditable />
+      <Rating rating={rating} isEditable setRating={setRating} />
     </div>
   );
 }
