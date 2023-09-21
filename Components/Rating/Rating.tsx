@@ -1,14 +1,10 @@
 import React from "react";
-import styles from "./Paragraph.module.scss";
+import styles from "./Rating.module.scss";
 import cn from "classnames";
-import { IParagraphProps } from "./Rating.props";
+import { IRating } from "./Rating.props";
 
-const Paragraph = ({ size, children, className, ...props }: IParagraphProps): JSX.Element => {
-  return (
-    <p className={cn(styles.Paragraph, className, styles[size])} {...props}>
-      {children}
-    </p>
-  );
+const Paragraph = ({ isEditable = false, rating, setRating, ...props }: IRating): JSX.Element => {
+  return <div {...props}></div>;
 };
 
 export default Paragraph;
