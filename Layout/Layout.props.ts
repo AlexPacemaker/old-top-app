@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
 
-export interface ISidebar {
+export interface ILayout {
   children: ReactNode;
 }
