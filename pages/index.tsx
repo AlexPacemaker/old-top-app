@@ -4,24 +4,19 @@ import Button from "@/Components/Button/Button";
 import Paragraph from "@/Components/Paragraph/Paragraph";
 import Tag from "@/Components/Tag/Tag";
 import Rating from "@/Components/Rating/Rating";
+import { withLayout } from "@/Layout/Layout";
 
-export default function Home(): JSX.Element {
+const Home = (): JSX.Element => {
   const [rating, setRating] = useState<number>(4);
 
   return (
     <div>
-      <Titles tag='h1'>Text</Titles>
+      <Titles tag='h1'>Title 1</Titles>
       <Button appearence='primary'>Primary</Button>
       <Button appearence='ghost'>Ghost</Button>
       <Paragraph size='s'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, consectetur?</Paragraph>
-      <Paragraph size='m'>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta corrupti asperiores eligendi cumque quia beatae
-        fugiat doloremque illum repudiandae temporibus.
-      </Paragraph>
-      <Paragraph size='l'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis impedit tenetur ratione, molestias odio, quo dicta
-        ipsam vero optio, accusamus perspiciatis! Sed distinctio eius quisquam, vel nam deserunt reiciendis harum!
-      </Paragraph>
+      <Paragraph size='m'>123</Paragraph>
+      <Paragraph size='l'>12345</Paragraph>
       <Tag size='s' color='ghost'>
         Ghost
       </Tag>
@@ -37,4 +32,6 @@ export default function Home(): JSX.Element {
       <Rating rating={rating} isEditable setRating={setRating} />
     </div>
   );
-}
+};
+
+export default withLayout(Home);
