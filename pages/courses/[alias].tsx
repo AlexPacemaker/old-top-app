@@ -3,21 +3,22 @@ import { withLayout } from "@/Layout/Layout";
 import { GetStaticProps } from "next";
 import axios from "axios";
 import { MenuItem } from "@/Interfaces/menu.interface";
+import { TopPageModel } from "@/Interfaces/toppage.interface";
 
 const Course = ({ menu }: CourseProps): JSX.Element => {
   return <></>;
 };
 
-export default withLayout(Home);
+export default withLayout(Course);
 
 export const getStaticProps: GetStaticProps<CourseProps> = async () => {
   const firstCategory = 0;
 
-  const { data: menu } = await axios.post<CourseProps[]>(process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find", {
+  const { data: menu } = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find", {
     firstCategory,
   });
 
-  const { data: page } = await axios.post<CourseProps[]>(process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find", {
+  const { data: page } = await axios.post<TopPageModel>(process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find", {
     firstCategory,
   });
 
@@ -25,6 +26,7 @@ export const getStaticProps: GetStaticProps<CourseProps> = async () => {
     props: {
       menu,
       firstCategory,
+      page,
     },
   };
 };
@@ -32,4 +34,5 @@ export const getStaticProps: GetStaticProps<CourseProps> = async () => {
 interface CourseProps extends Record<string, unknown> {
   menu: MenuItem[];
   firstCategory: number;
+  page: TopPageModel;
 }
