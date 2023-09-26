@@ -5,8 +5,9 @@ import axios from "axios";
 import { MenuItem } from "@/Interfaces/menu.interface";
 import { TopPageModel } from "@/Interfaces/toppage.interface";
 import { ParsedUrlQuery } from "querystring";
+import { ProductModel } from "@/Interfaces/product.interface";
 
-const Course = ({ menu }: CourseProps): JSX.Element => {
+const Course = ({ menu, page, products }: CourseProps): JSX.Element => {
   return <></>;
 };
 
@@ -26,18 +27,21 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({
     firstCategory,
   });
 
-  const { data: page } = await axios.post<TopPageModel>(
-    process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/byAlias/" + params.alias,
-    {
-      firstCategory,
-    }
+  const { data: page } = await axios.get<TopPageModel>(
+    process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/byAlias/" + params.alias
   );
+
+  const { data: products } = await axios.post<ProductModel[]>(process.env.NEXT_PUBLIC_DOMAIN + "/api/product/find", {
+    category: page.category,
+    limit: 10,
+  });
 
   return {
     props: {
       menu,
       firstCategory,
       page,
+      products,
     },
   };
 };
@@ -46,4 +50,5 @@ interface CourseProps extends Record<string, unknown> {
   menu: MenuItem[];
   firstCategory: number;
   page: TopPageModel;
+  products: ProductModel[];
 }
