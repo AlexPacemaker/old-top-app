@@ -10,7 +10,7 @@ import { ProductModel } from "@/Interfaces/product.interface";
 const firstCategory = 0;
 
 const Course = ({ menu, page, products }: CourseProps): JSX.Element => {
-  return <></>;
+  return <>{products && products.length}</>;
 };
 
 export default withLayout(Course);
