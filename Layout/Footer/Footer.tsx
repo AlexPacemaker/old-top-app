@@ -6,7 +6,7 @@ import { format } from "date-fns";
 export const Footer = ({ className, ...props }: IFooter): JSX.Element => {
   return (
     <footer className={cn(className, styles.footer)} {...props}>
-      <div>Все права защищены {format(new Date(), "yyyy")}</div>
+      <div>Pacenaker © {format(new Date(), "yyyy")}</div>
       <a href='#' target='_blank'>
         Пользовательское соглашение
       </a>
