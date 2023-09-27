@@ -15,12 +15,10 @@ export const AppContextProvider = ({
   firstCategory,
   children,
 }: IAppContext & { children: ReactNode }): JSX.Element => {
-
-    
   const [menuState, setMenuState] = useState<MenuItem[]>(menu);
   const setMenu = (newMenu: MenuItem[]) => {
     setMenuState(newMenu);
   };
 
-  return <AppContext.Provider value={{ menu: menuState, firstCategory }}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ menu: menuState, firstCategory, setMenu }}>{children}</AppContext.Provider>;
 };
