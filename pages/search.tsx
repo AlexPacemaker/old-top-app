@@ -3,7 +3,7 @@ import { GetStaticProps } from "next";
 import { MenuItem } from "@/Interfaces/menu.interface";
 import { withLayout } from "@/Layout/Layout";
 
-const Search = ({ menu }: SearchProps): JSX.Element => {
+const Search = (): JSX.Element => {
   return <>Search</>;
 };
 
