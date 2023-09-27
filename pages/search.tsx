@@ -1,10 +1,10 @@
-import { withLayout } from "@/Layout/Layout";
-import { GetStaticProps } from "next";
 import axios from "axios";
+import { GetStaticProps } from "next";
 import { MenuItem } from "@/Interfaces/menu.interface";
+import { withLayout } from "@/Layout/Layout";
 
 const Search = ({ menu }: HomeProps): JSX.Element => {
-  return <></>;
+  return <>Search</>;
 };
 
 export default withLayout(Search);
