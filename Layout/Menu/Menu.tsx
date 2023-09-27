@@ -34,7 +34,7 @@ export const Menu = (): JSX.Element => {
                 <span>{menu.name}</span>
               </div>
             </a>
-            {menu.id == firstCategory && buildSecondLevel(menuItem)}
+            {menu.id == firstCategory && buildSecondLevel(menu)}
           </div>
         ))}
       </>
@@ -68,7 +68,9 @@ export const Menu = (): JSX.Element => {
         className={cn(styles.thirdlevel, {
           [styles.thirdLevelActive]: true,
         })}
-      ></a>
+      >
+        {page.category}
+      </a>
     ));
   };
 
