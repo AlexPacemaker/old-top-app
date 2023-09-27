@@ -8,6 +8,7 @@ import { withLayout } from "@/Layout/Layout";
 import { GetStaticProps } from "next";
 import axios from "axios";
 import { MenuItem } from "@/Interfaces/menu.interface";
+import PizzaPage from "./Pizza/Pizza";
 
 const Home = ({ menu }: HomeProps): JSX.Element => {
   const [rating, setRating] = useState<number>(4);
