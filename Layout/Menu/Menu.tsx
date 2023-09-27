@@ -27,7 +27,7 @@ export const Menu = (): JSX.Element => {
       setMenu(
         menu.map((m) => {
           if (m._id.secondCategory == secondCategory) {
-            m.isOpened = true;
+            m.isOpened = !m.isOpened;
           }
           return m;
         })
@@ -65,7 +65,14 @@ export const Menu = (): JSX.Element => {
           }
           return (
             <div key={m._id.secondCategory}>
-              <div className={styles.secondLevel}>{m._id.secondCategory}</div>
+              <div
+                className={styles.secondLevel}
+                onClick={() => {
+                  openSecondLevel(m._id.secondCategory);
+                }}
+              >
+                {m._id.secondCategory}
+              </div>
               <div
                 className={cn(styles.secondLevelBlock, {
                   [styles.secondLevelBlockOpened]: m.isOpened,
