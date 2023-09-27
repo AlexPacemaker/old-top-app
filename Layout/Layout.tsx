@@ -5,7 +5,7 @@ import { Header } from "./Header/Header";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { Footer } from "./Footer/Footer";
 import { FunctionComponent } from "react";
-import { AppContextProvider, IAppContext } from "@/context/app.contex";
+import { AppContextProvider, IAppContext } from "@/context/app.context";
 
 const Layout = ({ children }: ILayout): JSX.Element => {
   return (

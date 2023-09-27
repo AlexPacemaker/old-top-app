@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import styles from "./Menu.module.scss";
 import cn from "classnames";
-import { AppContext } from "@/context/app.contex";
+import { AppContext } from "@/context/app.context";
 
 export const Menu = (): JSX.Element => {
   const { menu, setMenu, firstCategory } = useContext(AppContext);
