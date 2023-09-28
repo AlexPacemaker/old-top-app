@@ -7,9 +7,10 @@ import { TopLevelCategory, TopPageModel } from "@/Interfaces/toppage.interface";
 import { ParsedUrlQuery } from "querystring";
 import { ProductModel } from "@/Interfaces/product.interface";
 import { firstLevelMenu } from "@/helpers/helpers";
+import TopPageComponent from "@/page-components/TopPageComponent/TopPageComponent";
 
-const TopPage = ({ menu, page, products }: TopPageProps): JSX.Element => {
-  return <>{products && products.length}</>;
+const TopPage = ({ firstCategory, page, products }: TopPageProps): JSX.Element => {
+  return <TopPageComponent firstCategory={firstCategory} page={page} products={products} />;
 };
 
 export default withLayout(TopPage);
