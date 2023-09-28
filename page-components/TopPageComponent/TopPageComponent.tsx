@@ -25,7 +25,7 @@ const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentPro
           hh.ru
         </Tag>
       </div>
-      {firstCategory == TopLevelCategory.Courses && <HHData {...page.hh} />}
+      <div>{firstCategory == TopLevelCategory.Courses && page.hh && <HHData {...page.hh} />}</div>
     </div>
   );
 };
