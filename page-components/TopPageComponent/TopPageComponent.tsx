@@ -3,7 +3,7 @@ import styles from "./TopPage.module.scss";
 import { TopPageComponentProps } from "./TopPage.props";
 import Tag from "@/Components/Tag/Tag";
 import Htag from "@/Components/Htag/Htag";
-import Card from "@/Components/Card/Card";
+import HHData from "@/Components/HHData/HHData";
 
 const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentProps): JSX.Element => {
   return (
@@ -24,7 +24,7 @@ const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentPro
           hh.ru
         </Tag>
       </div>
-      
+      <HHData {...page.hh} />
     </div>
   );
 };
