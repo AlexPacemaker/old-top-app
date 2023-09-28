@@ -11,12 +11,12 @@ export interface TopPageAdvantage {
   description: string;
 }
 
-export interface HhData {
+export interface IHHData {
   _id?: string;
   count?: number;
-  juniorSalary?: number;
-  middleSalary?: number;
-  seniorSalary?: number;
+  juniorSalary: number;
+  middleSalary: number;
+  seniorSalary: number;
   updatedAt?: Date;
 }
 
@@ -35,5 +35,5 @@ export interface TopPageModel {
   advantages?: TopPageAdvantage[];
   createdAt: Date;
   updatedAt: Date;
-  hh?: HhData;
+  hh?: IHHData;
 }
