@@ -1,14 +1,14 @@
 import React from "react";
-import styles from "./Paragraph.module.scss";
+import styles from "./Card.module.scss";
 import cn from "classnames";
-import { IParagraphProps } from "./Card.props";
+import { CardProps } from "./Card.props";
 
-const Paragraph = ({ size, children, className, ...props }: IParagraphProps): JSX.Element => {
+const Card = ({ className, children, color='white', ...props }: CardProps): JSX.Element => {
   return (
-    <p className={cn(styles.Paragraph, className, styles[size])} {...props}>
+    <div className={cn(styles.card, className, styles[color])} {...props}>
       {children}
-    </p>
+    </div>
   );
 };
 
-export default Paragraph;
+export default Card;
