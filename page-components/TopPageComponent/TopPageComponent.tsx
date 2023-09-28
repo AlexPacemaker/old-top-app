@@ -24,12 +24,7 @@ const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentPro
           hh.ru
         </Tag>
       </div>
-      <div className={styles.hh}>
-        <Card color='white' className={styles.hhcount}>
-          <div className={styles.hhStatTitle}>Всего вакансий</div>
-          <div className={styles.hhStatCount}>{page.hh?.count}</div>
-        </Card>
-      </div>
+      
     </div>
   );
 };
