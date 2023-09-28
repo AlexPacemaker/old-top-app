@@ -6,7 +6,7 @@ import Htag from "@/Components/Htag/Htag";
 
 const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentProps): JSX.Element => {
   return (
-    <>
+    <div className={styles.wrapper}>
       <div className={styles.title}>
         <Htag tag='h1'>{page.title}</Htag>
         {products && (
@@ -16,7 +16,15 @@ const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentPro
         )}
         <span>Sorting</span>
       </div>
-    </>
+      <div>{products && products.map((p) => <div key={p._id}>{p.title}</div>)}</div>
+      <div className={styles.hhtitle}>
+        <Htag tag='h2'>Вакансии - {page.category}</Htag>
+        <Tag color='red' size='m'>
+          hh.ru
+        </Tag>
+      </div>
+      <div className={styles.hh}></div>
+    </div>
   );
 };
 
