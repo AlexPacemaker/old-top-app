@@ -1,8 +1,8 @@
 import React from "react";
-import { ITitlesProps } from "./Titles.props";
+import { HtagProps } from "./Htag.props";
 import styles from "./Title.module.scss";
 
-const Titles = ({ tag, children }: ITitlesProps): JSX.Element => {
+const Htag = ({ tag, children }: HtagProps): JSX.Element => {
   switch (tag) {
     case "h1":
       return <h1 className={styles.h1}>{children}</h1>;
@@ -15,4 +15,4 @@ const Titles = ({ tag, children }: ITitlesProps): JSX.Element => {
   }
 };
 
-export default Titles;
+export default Htag;

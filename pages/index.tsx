@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Titles from "@/Components/Titles/Titles";
+import Titles from "@/Components/Htag/Htag";
 import Button from "@/Components/Button/Button";
 import Paragraph from "@/Components/Paragraph/Paragraph";
 import Tag from "@/Components/Tag/Tag";

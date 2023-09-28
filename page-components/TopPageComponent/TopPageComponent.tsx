@@ -1,7 +1,7 @@
 import React from "react";
 import { TopPageComponentProps } from "./TopPage.props";
 import Tag from "@/Components/Tag/Tag";
-import Titles from "@/Components/Titles/Titles";
+import Titles from "@/Components/Htag/Htag";
 
 const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentProps): JSX.Element => {
   return (
