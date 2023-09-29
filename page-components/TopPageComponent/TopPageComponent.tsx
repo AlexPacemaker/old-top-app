@@ -25,7 +25,14 @@ const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentPro
           hh.ru
         </Tag>
       </div>
-      <div>{firstCategory == TopLevelCategory.Courses && page.hh && <HHData {...page.hh} />}</div>
+      <div>
+        {firstCategory == TopLevelCategory.Courses && page.hh && <HHData {...page.hh} />}
+        {page.advantages && page.advantages.length > 0 && (
+          <>
+            <Htag tag='h2'>Преимущества</Htag>
+          </>
+        )}
+      </div>
     </div>
   );
 };
