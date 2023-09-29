@@ -8,21 +8,17 @@ html,
 body {
   color: var(--black);
   background: #f5f6f8;
-
   font-family: "Montserrat", sans-serif;
 }
 
 a {
   text-decoration: none;
-
   color: inherit;
 }
 
 .visualyHidden {
   position: absolute;
-
   overflow: hidden;
-
   width: 0;
   height: 0;
 }
