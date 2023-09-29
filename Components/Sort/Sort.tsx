@@ -1,14 +1,11 @@
 import React from "react";
-import styles from "./Paragraph.module.scss";
-import cn from "classnames";
-import { IParagraphProps } from "./Sort.props";
+import styles from "./Sort.module.scss";
+import { IParagraphProps, SortProps } from "./Sort.props";
 
-const Paragraph = ({ size, children, className, ...props }: IParagraphProps): JSX.Element => {
+const Sort = ({ sort, setSort, className, ...props  }: SortProps): JSX.Element => {
   return (
-    <p className={cn(styles.Paragraph, className, styles[size])} {...props}>
-      {children}
-    </p>
+    
   );
 };
 
-export default Paragraph;
+export default Sort;
