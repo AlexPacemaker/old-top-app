@@ -5,6 +5,7 @@ import Tag from "@/Components/Tag/Tag";
 import Htag from "@/Components/Htag/Htag";
 import HHData from "@/Components/HHData/HHData";
 import { TopLevelCategory } from "@/Interfaces/toppage.interface";
+import Advantages from "@/Components/Advantages/Advantages";
 
 const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentProps): JSX.Element => {
   return (
@@ -30,6 +31,7 @@ const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentPro
         {page.advantages && page.advantages.length > 0 && (
           <>
             <Htag tag='h2'>Преимущества</Htag>
+            <Advantages advantages={page.advantages} />
           </>
         )}
       </div>

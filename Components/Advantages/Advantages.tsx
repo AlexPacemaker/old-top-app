@@ -1,48 +1,21 @@
 import React from "react";
-import styles from "./HHData.module.scss";
-import Card from "../Card/Card";
-import RateIcon from "./rate.svg";
-import { priceRu } from "@/helpers/helpers";
-import { HHDataProps } from "./Advantages.props";
+import styles from "./Advantages.module.scss";
+import { AdvantagesProps } from "./Advantages.props";
+import CheckIcon from "./check.svg";
 
-const HHData = ({ count, juniorSalary, middleSalary, seniorSalary }: HHDataProps): JSX.Element => {
+const Advantages = ({ advantages }: AdvantagesProps): JSX.Element => {
   return (
-    <div className={styles.hh}>
-      <Card color='white' className={styles.count}>
-        <div className={styles.title}>Всего вакансий</div>
-        <div className={styles.countValue}>{count}</div>
-      </Card>
-      <Card color='white' className={styles.salary}>
-        <div>
-          <div className={styles.title}>Начальный</div>
-          <div className={styles.salaryValue}>{priceRu(juniorSalary)}</div>
-          <div className={styles.rate}>
-            <RateIcon className={styles.filled} />
-            <RateIcon />
-            <RateIcon />
-          </div>
+    <>
+      {advantages.map((a) => (
+        <div key={a._id} className={styles.advantage}>
+          <CheckIcon />
+          <div className={styles.title}>{a.title}</div>
+          <hr className={styles.vline} />
+          <div>{a.description}</div>
         </div>
-        <div>
-          <div className={styles.title}>Средний</div>
-          <div className={styles.salaryValue}>{priceRu(middleSalary)}</div>
-          <div className={styles.rate}>
-            <RateIcon className={styles.filled} />
-            <RateIcon className={styles.filled} />
-            <RateIcon />
-          </div>
-        </div>
-        <div>
-          <div className={styles.title}>Профессионал</div>
-          <div className={styles.salaryValue}>{priceRu(seniorSalary)}</div>
-          <div className={styles.rate}>
-            <RateIcon className={styles.filled} />
-            <RateIcon className={styles.filled} />
-            <RateIcon className={styles.filled} />
-          </div>
-        </div>
-      </Card>
-    </div>
+      ))}
+    </>
   );
 };
 
-export default HHData;
+export default Advantages;
