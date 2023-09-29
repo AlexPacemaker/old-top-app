@@ -6,6 +6,7 @@ import Htag from "@/Components/Htag/Htag";
 import HHData from "@/Components/HHData/HHData";
 import { TopLevelCategory } from "@/Interfaces/toppage.interface";
 import Advantages from "@/Components/Advantages/Advantages";
+import Paragraph from "@/Components/Paragraph/Paragraph";
 
 const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentProps): JSX.Element => {
   return (
@@ -34,6 +35,15 @@ const TopPageComponent = ({ firstCategory, page, products }: TopPageComponentPro
             <Advantages advantages={page.advantages} />
           </>
         )}
+        {page.seoText && (
+          <Paragraph size='m' color='primary'>
+            {page.seoText}
+          </Paragraph>
+        )}
+        <Htag tag='h2'>Получаемые навыки</Htag>
+        {page.tags.map((t) => (
+          <Tag key={t} size="m" color="primary">{t}</Tag>
+        ))}
       </div>
     </div>
   );

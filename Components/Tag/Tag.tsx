@@ -5,7 +5,7 @@ import { ITag } from "./Tag.props";
 
 const Tag = ({ children, size = "s", color = "ghost", href, className, ...props }: ITag): JSX.Element => {
   return (
-    <div className={cn(styles.Tag, styles[size], styles[color])} {...props}>
+    <div className={cn(styles.tag, styles[size], styles[color])} {...props}>
       {href ? <a href={href}>{children}</a> : <>{children}</>}
     </div>
   );
