@@ -1,8 +1,7 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  user-select: none;
 }
 
 html,
@@ -10,7 +9,7 @@ body {
   color: var(--black);
   background: #f5f6f8;
 
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 a {
