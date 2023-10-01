@@ -1,15 +1,16 @@
-.Paragraph {
-  color: black;
+.input {
+  padding: 7px 15px;
+  color: var(--black);
+  border: 1px solid silver;
+  outline-color: var(--primary);
+  background: var(--white);
+  box-shadow: 0 0 8px 4px rgb(0 0 0 / 5%);
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: "Montserrat", sans-serif;
 }
 
-.s {
-  font-size: 14px;
-  line-height: 24px;
-}
-.m {
-  font-size: 16px;
-  line-height: 24px;
-}
-.l {
-  font-size: 18px;
+.input::placeholder {
+  color: var(--gray);
 }

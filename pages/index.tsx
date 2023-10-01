@@ -35,7 +35,7 @@ const Home = ({ menu }: HomeProps): JSX.Element => {
         Green
       </Tag>
       <Rating rating={rating} isEditable setRating={setRating} />
-      <Input />
+      <Input placeholder="test"/>
     </div>
   );
 };
