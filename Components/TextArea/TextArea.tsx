@@ -4,7 +4,7 @@ import cn from "classnames";
 import { TextAreaProps } from "./TextArea.props";
 
 const TextArea = ({ className, ...props }: TextAreaProps): JSX.Element => {
-  return <textarea className={cn(className, styles.input)} {...props} />;
+  return <textarea className={cn(className, styles.textarea)} {...props} />;
 };
 
 export default TextArea;

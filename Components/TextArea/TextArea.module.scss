@@ -1,4 +1,4 @@
-.input {
+.textarea {
   padding: 7px 15px;
   color: var(--black);
   border: 1px solid silver;
@@ -11,6 +11,6 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.input::placeholder {
+.textarea::placeholder {
   color: var(--gray);
 }
