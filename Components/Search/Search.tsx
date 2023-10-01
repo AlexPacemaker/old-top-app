@@ -1,14 +1,19 @@
 import React from "react";
-import styles from "./Paragraph.module.scss";
+import styles from "./Search.module.scss";
 import cn from "classnames";
-import { IParagraphProps } from "./Search.props";
+import { SearchProps } from "./Search.props";
+import Input from "../Input/Input";
+import Button from "../Button/Button";
 
-const Paragraph = ({ size, children, className, ...props }: IParagraphProps): JSX.Element => {
+const Search = ({ className, ...props }: SearchProps): JSX.Element => {
+  const [search, setSearch] = React.useState<string>("");
+
   return (
-    <p className={cn(styles.Paragraph, className, styles[size])} {...props}>
-      {children}
-    </p>
+    <div className={cn(className, styles.search)}>
+      <Input placeholder='Поиск...' value={search} onChange={(e) => setSearch(e.target.value)} />
+      <Button appearence='primary' className={styles.button}></Button>
+    </div>
   );
 };
 
-export default Paragraph;
+export default Search;

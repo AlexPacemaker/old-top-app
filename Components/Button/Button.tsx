@@ -3,7 +3,7 @@ import styles from "./Button.module.scss";
 import cn from "classnames";
 import { IButton } from "./Button.props";
 
-const Button = ({ appearence, children }: IButton): JSX.Element => {
+const Button = ({ appearence, children, className }: IButton): JSX.Element => {
   return (
     <button
       className={cn(styles.button, {
