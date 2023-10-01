@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./Input.module.scss";
+import styles from "./TextArea.module.scss";
 import cn from "classnames";
-import { InputProps } from "./TextArea.props";
+import { TextAreaProps } from "./TextArea.props";
 
-const Input = ({ className, ...props }: InputProps): JSX.Element => {
-  return <input className={cn(className, styles.input)} {...props} />;
+const TextArea = ({ className, ...props }: TextAreaProps): JSX.Element => {
+  return <textarea className={cn(className, styles.input)} {...props} />;
 };
 
-export default Input;
+export default TextArea;
