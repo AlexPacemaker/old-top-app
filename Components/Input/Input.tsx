@@ -1,14 +1,10 @@
 import React from "react";
-import styles from "./Paragraph.module.scss";
+import styles from "./Input.module.scss";
 import cn from "classnames";
-import { IParagraphProps } from "./Paragraph.props";
+import { InputProps } from "./Input.props";
 
-const Paragraph = ({ size, children, className, ...props }: IParagraphProps): JSX.Element => {
-  return (
-    <p className={cn(styles.Paragraph, className, styles[size])} {...props}>
-      {children}
-    </p>
-  );
+const Input = ({ className, ...props }: InputProps): JSX.Element => {
+  return <input className={cn(className, styles.input)} {...props} />;
 };
 
-export default Paragraph;
+export default Input;

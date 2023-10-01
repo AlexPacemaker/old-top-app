@@ -9,6 +9,7 @@ import { GetStaticProps } from "next";
 import axios from "axios";
 import { MenuItem } from "@/Interfaces/menu.interface";
 import PizzaPage from "./Pizza/Pizza";
+import Input from "@/Components/Input/Input";
 
 const Home = ({ menu }: HomeProps): JSX.Element => {
   const [rating, setRating] = useState<number>(4);
@@ -34,6 +35,7 @@ const Home = ({ menu }: HomeProps): JSX.Element => {
         Green
       </Tag>
       <Rating rating={rating} isEditable setRating={setRating} />
+      <Input />
     </div>
   );
 };
