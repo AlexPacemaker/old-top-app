@@ -20,6 +20,12 @@ const Search = ({ className, ...props }: SearchProps): JSX.Element => {
     });
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (e.key == "Enter") {
+      goToSearch();
+    }
+  };
+
   return (
     <div className={cn(className, styles.search)} {...props}>
       <Input
@@ -28,7 +34,7 @@ const Search = ({ className, ...props }: SearchProps): JSX.Element => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <Button appearence='primary' className={styles.button} onClick={goToSearch}>
+      <Button appearence='primary' className={styles.button} onClick={goToSearch} onKeyDown={handleKeyDown}>
         <GlassIcon />
       </Button>
     </div>
