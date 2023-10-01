@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Button.module.scss";
 import cn from "classnames";
-import { IButton } from "./Button.props";
+import { ButtonProps } from "./Button.props";
 
-const Button = ({ appearence, children, className }: IButton): JSX.Element => {
+const Button = ({ appearence, children, className }: ButtonProps): JSX.Element => {
   return (
     <button
       className={cn(styles.button, {

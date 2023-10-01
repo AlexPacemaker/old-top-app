@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
-export interface IButton {
+export interface ButtonProps {
   children: ReactNode;
   appearence: "primary" | "ghost";
+  className: string;
 }

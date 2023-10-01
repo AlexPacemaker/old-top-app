@@ -1,15 +1,18 @@
-.Paragraph {
-  color: black;
+.search {
+  position: relative;
+  width: 100%;
 }
 
-.s {
-  font-size: 14px;
-  line-height: 24px;
+.input {
+  width: 100%;
 }
-.m {
-  font-size: 16px;
-  line-height: 24px;
-}
-.l {
-  font-size: 18px;
+
+.button {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+
+  width: 30px;
+  height: 30px;
+  padding: 7px;
 }
