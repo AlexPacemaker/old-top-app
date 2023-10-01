@@ -4,6 +4,7 @@ import cn from "classnames";
 import { SearchProps } from "./Search.props";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
+import GlassIcon from "./glass.svg";
 
 const Search = ({ className, ...props }: SearchProps): JSX.Element => {
   const [search, setSearch] = React.useState<string>("");
@@ -11,7 +12,9 @@ const Search = ({ className, ...props }: SearchProps): JSX.Element => {
   return (
     <div className={cn(className, styles.search)}>
       <Input placeholder='Поиск...' value={search} onChange={(e) => setSearch(e.target.value)} />
-      <Button appearence='primary' className={styles.button}></Button>
+      <Button appearence='primary' className={styles.button} onClick={}>
+        <GlassIcon />
+      </Button>
     </div>
   );
 };
