@@ -1,4 +1,4 @@
-import React from "react";
+import React, { KeyboardEvent } from "react";
 import styles from "./Search.module.scss";
 import cn from "classnames";
 import { SearchProps } from "./Search.props";
@@ -20,7 +20,7 @@ const Search = ({ className, ...props }: SearchProps): JSX.Element => {
     });
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+  const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key == "Enter") {
       goToSearch();
     }
