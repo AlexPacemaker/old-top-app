@@ -3,8 +3,8 @@ import styles from "./Product.module.scss";
 import cn from "classnames";
 import { ProductProps } from "./Product.props";
 
-const Product = ({ profuct, className, ...props }: ProductProps): JSX.Element => {
-  return <div>{profuct.title}</div>;
+const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
+  return <div>{product.title}</div>;
 };
 
 export default Product;
