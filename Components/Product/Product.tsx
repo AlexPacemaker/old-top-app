@@ -1,14 +1,10 @@
 import React from "react";
-import styles from "./Paragraph.module.scss";
+import styles from "./Product.module.scss";
 import cn from "classnames";
-import { IParagraphProps } from "./Product.props";
+import { ProductProps } from "./Product.props";
 
-const Paragraph = ({ size, children, className, ...props }: IParagraphProps): JSX.Element => {
-  return (
-    <p className={cn(styles.Paragraph, className, styles[size])} {...props}>
-      {children}
-    </p>
-  );
+const Product = ({ profuct, className, ...props }: ProductProps): JSX.Element => {
+  return <div>{profuct.title}</div>;
 };
 
-export default Paragraph;
+export default Product;
