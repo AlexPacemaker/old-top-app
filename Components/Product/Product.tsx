@@ -44,19 +44,23 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
       <div className={styles.description}>{product.description}</div>
       <div className={styles.feature}>фичи</div>
       <div className={styles.advBlock}>
-        <div className={styles.advantages}>
-          <div>Преимущества</div>
-          <div>{product.advantages}</div>
-        </div>
-        <div className={styles.disadvantages}>
-          <div>Недостатки</div>
-          <div>{product.disadvantages}</div>
-        </div>
+        {product.advantages && (
+          <div className={styles.advantages}>
+            <div className={styles.advTitle}>Преимущества</div>
+            <div>{product.advantages}</div>
+          </div>
+        )}
+        {product.disadvantages && (
+          <div className={styles.disadvantages}>
+            <div>Недостатки</div>
+            <div>{product.disadvantages}</div>
+          </div>
+        )}
       </div>
       <Divider className={styles.hr} />
       <div className={styles.actions}>
         <Button appearance='primary'>Узнать подробнее</Button>
-        <Button appearance='ghost' arrow={"right"}>
+        <Button appearance='ghost' arrow={"right"} className={styles.reviewButton}>
           Читать отзывы
         </Button>
       </div>
