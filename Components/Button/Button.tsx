@@ -1,18 +1,30 @@
-import React from "react";
 import styles from "./Button.module.scss";
-import cn from "classnames";
 import { ButtonProps } from "./Button.props";
+import ArrowIcon from "./arrow.svg";
+import cn from "classnames";
+import { motion } from "framer-motion";
 
-const Button = ({ appearence, children, className }: ButtonProps): JSX.Element => {
+const Button = ({ appearance, arrow = "none", children, className, ...props }: ButtonProps): JSX.Element => {
   return (
-    <button
-      className={cn(className, styles.button, {
-        [styles.primary]: appearence == "primary",
-        [styles.ghost]: appearence == "ghost",
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      className={cn(styles.button, className, {
+        [styles.primary]: appearance == "primary",
+        [styles.ghost]: appearance == "ghost",
       })}
+      {...props}
     >
       {children}
-    </button>
+      {arrow != "none" && (
+        <span
+          className={cn(styles.arrow, {
+            [styles.down]: arrow == "down",
+          })}
+        >
+          <ArrowIcon />
+        </span>
+      )}
+    </motion.button>
   );
 };
 

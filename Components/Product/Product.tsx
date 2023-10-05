@@ -55,8 +55,8 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
       </div>
       <Divider className={styles.hr} />
       <div className={styles.actions}>
-        <Button appearence='primary'>Узнать подробнее</Button>
-        <Button appearence='ghost' arrow={"right"}>
+        <Button appearance='primary'>Узнать подробнее</Button>
+        <Button appearance='ghost' arrow={"right"}>
           Читать отзывы
         </Button>
       </div>
