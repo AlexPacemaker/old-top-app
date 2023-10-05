@@ -5,12 +5,13 @@ import { ProductProps } from "./Product.props";
 import Card from "../Card/Card";
 import Rating from "../Rating/Rating";
 import Tag from "../Tag/Tag";
+import Button from "../Button/Button";
 
 const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
   return (
     <Card className={styles.product}>
       <div className={styles.logo}>
-        <img src={product.image} alt={product.title} />
+        <img src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title} />
       </div>
       <div className={styles.title}>{product.title}</div>
       <div className={styles.price}>{product.price}</div>
@@ -28,6 +29,30 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
       <div className={styles.priceTitle}>цена</div>
       <div className={styles.creditTitle}>кредит</div>
       <div className={styles.rateTitle}>{product.reviewCount} отзывов</div>
+      <div className={styles.hr}>
+        <hr />
+      </div>
+      <div className={styles.description}>{product.description}</div>
+      <div className={styles.feature}>фичи</div>
+      <div className={styles.advBlock}>
+        <div className={styles.advantages}>
+          <div>Преимущества</div>
+          <div>{product.advantages}</div>
+        </div>
+        <div className={styles.disadvantages}>
+          <div>Недостатки</div>
+          <div>{product.disadvantages}</div>
+        </div>
+      </div>
+      <div className={styles.hr}>
+        <hr />
+      </div>
+      <div className={styles.actions}>
+        <Button appearence='primary'>Узнать подробнее</Button>
+        <Button appearence='ghost' arrow={"right"}>
+          Читать отзывы
+        </Button>
+      </div>
     </Card>
   );
 };
