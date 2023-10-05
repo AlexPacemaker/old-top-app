@@ -7,6 +7,7 @@ import Rating from "../Rating/Rating";
 import Tag from "../Tag/Tag";
 import Button from "../Button/Button";
 import { priceRu } from "@/helpers/helpers";
+import Divider from "../Divider/Divider";
 
 const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
   return (
@@ -31,7 +32,7 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
       </div>
       <div className={styles.tags}>
         {product.categories.map((categorie) => (
-          <Tag color='ghost' key={categorie}>
+          <Tag className={styles.category} color='ghost' key={categorie}>
             {categorie}
           </Tag>
         ))}
@@ -39,9 +40,7 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
       <div className={styles.priceTitle}>цена</div>
       <div className={styles.creditTitle}>кредит</div>
       <div className={styles.rateTitle}>{product.reviewCount} отзывов</div>
-      <div className={styles.hr}>
-        <hr />
-      </div>
+      <Divider className={styles.hr} />
       <div className={styles.description}>{product.description}</div>
       <div className={styles.feature}>фичи</div>
       <div className={styles.advBlock}>
@@ -54,9 +53,7 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
           <div>{product.disadvantages}</div>
         </div>
       </div>
-      <div className={styles.hr}>
-        <hr />
-      </div>
+      <Divider className={styles.hr} />
       <div className={styles.actions}>
         <Button appearence='primary'>Узнать подробнее</Button>
         <Button appearence='ghost' arrow={"right"}>
