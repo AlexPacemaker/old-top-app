@@ -8,7 +8,7 @@ import Tag from "../Tag/Tag";
 
 const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
   return (
-    <Card>
+    <Card className={styles.product}>
       <div className={styles.logo}>
         <img src={product.image} alt={product.title} />
       </div>
