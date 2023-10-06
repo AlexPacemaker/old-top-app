@@ -13,8 +13,8 @@ const Review = ({ review, className, ...props }: ReviewProps): JSX.Element => {
   return (
     <div className={cn(styles.review, className)} {...props}>
       <UserIcon className={styles.user} />
-      <div>
-        <span className={styles.name}>{name}:</span>
+      <div className={styles.title}>
+        <span className={styles.name}>{name}:</span>&nbsp;&nbsp
         <span>{title}:</span>
       </div>
       <div className={styles.date}>{format(new Date(createdAt), "dd MMMM yyyy", { locale: ru })}</div>
