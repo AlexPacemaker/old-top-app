@@ -28,7 +28,7 @@ const ReviewForm = ({ productId, className, ...props }: ReviewFormProps): JSX.El
             control={control}
             name='rating'
             render={({ field }) => {
-              return <Rating isEditable rating={field.value} setRating={field.onChange} />;
+              return <Rating isEditable rating={field.value} ref={field.ref} setRating={field.onChange} />;
             }}
           />
         </div>
