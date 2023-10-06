@@ -1,14 +1,18 @@
 import React from "react";
-import styles from "./ReviewForm.module.scss";
+import { useForm } from "react-hook-form";
 import cn from "classnames";
-import CloseIcon from "./close.svg";
 import { ReviewFormProps } from "./ReviewForm.props";
+import styles from "./ReviewForm.module.scss";
+import CloseIcon from "./close.svg";
 import Input from "../Input/Input";
 import Rating from "../Rating/Rating";
 import TextArea from "../TextArea/TextArea";
 import Button from "../Button/Button";
 
 const ReviewForm = ({ productId, className, ...props }: ReviewFormProps): JSX.Element => {
+  const {} = useForm
+
+
   return (
     <>
       <div className={cn(className, styles.reviewForm)} {...props}>
