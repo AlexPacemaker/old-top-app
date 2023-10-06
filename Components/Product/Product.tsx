@@ -9,6 +9,7 @@ import Button from "../Button/Button";
 import { declOfNum, priceRu } from "@/helpers/helpers";
 import Divider from "../Divider/Divider";
 import Image from "next/image";
+import Review from "../Review/Review";
 
 const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
   const [isReviewOpened, setIsReviewOpened] = React.useState<boolean>(false);
@@ -90,7 +91,11 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
           [styles.opened]: isReviewOpened,
           [styles.closed]: !isReviewOpened,
         })}
-      ></Card>
+      >
+        {product.reviews.map((r) => (
+          <Review key={r._id} review={r} />
+        ))}
+      </Card>
     </>
   );
 };
