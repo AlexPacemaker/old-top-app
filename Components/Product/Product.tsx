@@ -10,6 +10,7 @@ import { declOfNum, priceRu } from "@/helpers/helpers";
 import Divider from "../Divider/Divider";
 import Image from "next/image";
 import Review from "../Review/Review";
+import ReviewForm from "../ReviewForm/ReviewForm";
 
 const Product = ({ product, className, ...props }: ProductProps): JSX.Element => {
   const [isReviewOpened, setIsReviewOpened] = React.useState<boolean>(false);
@@ -98,6 +99,7 @@ const Product = ({ product, className, ...props }: ProductProps): JSX.Element =>
             <Divider />
           </>
         ))}
+        <ReviewForm productId={product._id} />
       </Card>
     </>
   );
